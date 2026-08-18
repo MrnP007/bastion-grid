@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bastion Grid — Cyber-Physical Resilience</title>
+  <meta name="description" content="Bastion Grid is a cyber-physical resilience and situational-awareness demonstrator for critical infrastructure.">
+  <style>
+    :root{
+      --bg:#061017;
+      --bg2:#0b1821;
+      --panel:#0d1d27cc;
+      --line:#183645;
+      --text:#e9f5f7;
+      --muted:#9db3bd;
+      --accent:#3de0dd;
+      --accent2:#79f2c8;
+      --warn:#f2b84b;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, #0a3340 0, transparent 28%),
+        linear-gradient(180deg,var(--bg),#03080d 70%);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+    nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(14px);
+      background:#041018d9;border-bottom:1px solid #17313e;
+    }
+    .navrow{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;letter-spacing:.16em;font-size:.95rem}
+    .navlinks{display:flex;gap:22px;font-size:.92rem;color:var(--muted)}
+    .navlinks a{text-decoration:none}
+    .navlinks a:hover{color:var(--text)}
+    .hero{
+      min-height:74vh;display:grid;align-items:center;
+      background:
+        linear-gradient(90deg,rgba(3,9,14,.96) 0%,rgba(3,9,14,.78) 45%,rgba(3,9,14,.34) 100%),
+        url('hero.png') center/cover no-repeat;
+      border-bottom:1px solid var(--line);
+    }
+    .hero-inner{padding:96px 0 88px;max-width:760px}
+    .eyebrow{color:var(--accent);font-size:.82rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    h1{font-size:clamp(3.1rem,8vw,6.3rem);line-height:.93;margin:.2em 0 .22em;letter-spacing:-.05em}
+    .sub{font-size:clamp(1.15rem,2.6vw,1.75rem);max-width:700px;color:#c8d9df}
+    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-block;text-decoration:none;border-radius:10px;padding:13px 18px;
+      font-weight:750;border:1px solid #2a5361;background:#0f2833;
+    }
+    .btn.primary{background:var(--accent);color:#031014;border-color:var(--accent)}
+    section{padding:78px 0;border-bottom:1px solid #0f2631}
+    h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.05;margin:0 0 18px;letter-spacing:-.03em}
+    .lead{font-size:1.18rem;color:#bdcfd5;max-width:820px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .card{
+      background:linear-gradient(180deg,#0d202aee,#08151dee);
+      border:1px solid #1a3947;border-radius:16px;padding:24px;min-height:190px;
+    }
+    .card h3{margin:0 0 10px;font-size:1.15rem}
+    .card p{margin:0;color:var(--muted)}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:34px}
+    .step{
+      border:1px solid #224755;background:#0b1b24;padding:17px 13px;border-radius:12px;
+      text-align:center;font-weight:700;font-size:.93rem;
+    }
+    .step strong{display:block;color:var(--accent);font-size:.76rem;letter-spacing:.12em;margin-bottom:7px}
+    .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .tag{border:1px solid #244452;border-radius:999px;padding:8px 12px;color:#b8cbd2;background:#0a1820}
+    .split{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+    .status{
+      border:1px solid #235365;border-radius:16px;padding:24px;background:#091a22;
+    }
+    .status .k{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em}
+    .status .v{font-size:1.15rem;font-weight:800;margin:5px 0 18px}
+    footer{padding:46px 0 64px;color:#8fa8b2}
+    .small{font-size:.86rem;color:#829aa4}
+    @media(max-width:850px){
+      .grid{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr 1fr}
+      .split{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .hero{min-height:66vh}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap navrow">
+    <div class="brand">BASTION GRID</div>
+    <div class="navlinks">
+      <a href="#challenge">Challenge</a>
+      <a href="#concept">Concept</a>
+      <a href="#validation">Validation</a>
+      <a href="#partners">Partners</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Critical Infrastructure Resilience</div>
+    <h1>Bastion Grid</h1>
+    <p class="sub">
+      A cyber-physical resilience and situational-awareness demonstrator designed
+      to help critical-infrastructure operators understand potential exposure,
+      operational impact and justified response.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:mr.umbro007@gmail.com?subject=Bastion%20Grid%20Introduction">Discuss a PoC</a>
+      <a class="btn" href="#concept">Explore the concept</a>
+    </div>
+  </div>
+</header>
+
+<section id="challenge">
+  <div class="wrap">
+    <div class="eyebrow">The challenge</div>
+    <h2>Infrastructure incidents do not stay isolated.</h2>
+    <p class="lead">
+      Cyber events, physical anomalies and operational disruptions can create
+      consequences across connected assets and functions. Operators need a
+      defensible view of what may be exposed, what is actually affected and what
+      response is justified.
+    </p>
+    <div class="grid">
+      <div class="card"><h3>Multi-domain signals</h3><p>Cyber, physical and operational information often arrives through separate systems and teams.</p></div>
+      <div class="card"><h3>Technical dependencies</h3><p>One incident can affect downstream assets, functions and services through complex infrastructure relationships.</p></div>
+      <div class="card"><h3>Operational decisions</h3><p>Response needs to be evidence-based, understandable and compatible with human operational authority.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="concept">
+  <div class="wrap">
+    <div class="eyebrow">The concept</div>
+    <h2>From fragmented events to operator-oriented situational awareness.</h2>
+    <p class="lead">
+      Bastion Grid combines event correlation, asset mapping, dependency
+      awareness, cascading-exposure assessment, operational impact assessment
+      and controlled response support.
+    </p>
+    <div class="flow">
+      <div class="step"><strong>01</strong>Event correlation</div>
+      <div class="step"><strong>02</strong>Asset mapping</div>
+      <div class="step"><strong>03</strong>Dependency awareness</div>
+      <div class="step"><strong>04</strong>Impact assessment</div>
+      <div class="step"><strong>05</strong>Decision support</div>
+    </div>
+    <div class="tagrow">
+      <span class="tag">Cyber-physical</span>
+      <span class="tag">Critical infrastructure</span>
+      <span class="tag">Human-in-the-loop</span>
+      <span class="tag">Dependency modelling</span>
+      <span class="tag">Resilience & recovery</span>
+    </div>
+  </div>
+</section>
+
+<section id="validation">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Current status</div>
+      <h2>A working laboratory demonstrator exists.</h2>
+      <p class="lead">
+        The current demonstrator has been exercised through automated regression
+        testing, synthetic scenarios, recorded-feed replay, semantic API/UI
+        validation and adversarial evidence testing.
+      </p>
+      <p class="small">
+        This public page intentionally excludes proprietary decision logic,
+        patent-candidate mechanisms, source/provenance trust architecture and
+        confidential validation material.
+      </p>
+    </div>
+    <div class="status">
+      <div class="k">Project stage</div>
+      <div class="v">Laboratory demonstrator</div>
+      <div class="k">Next objective</div>
+      <div class="v">External validation & controlled PoC</div>
+      <div class="k">Focus</div>
+      <div class="v">Critical infrastructure / dual-use resilience</div>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <div class="eyebrow">Partner opportunity</div>
+    <h2>Seeking validation, integration and PoC partners.</h2>
+    <p class="lead">
+      We are interested in discussions with critical-infrastructure operators,
+      research institutes, defence and resilience organisations, OT/ICS
+      specialists, sensor and data providers, cyber-security teams, digital-twin
+      developers and testbed operators.
+    </p>
+    <div class="grid">
+      <div class="card"><h3>Use-case validation</h3><p>Validate representative infrastructure scenarios, dependencies and operational requirements.</p></div>
+      <div class="card"><h3>Integration</h3><p>Explore telemetry, sensor, OT/ICS, cyber-security and infrastructure-status data interfaces.</p></div>
+      <div class="card"><h3>Proof of Concept</h3><p>Define a controlled, measurable PoC in a representative test or operational environment.</p></div>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="mailto:mr.umbro007@gmail.com?subject=Bastion%20Grid%20Partner%20Discussion">Contact Patryk Sliwinski</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Bastion Grid</strong><br>
+    Patryk Sliwinski · Belgium · <a href="mailto:mr.umbro007@gmail.com">mr.umbro007@gmail.com</a>
+    <p class="small">Non-confidential project overview.</p>
+  </div>
+</footer>
+</body>
+</html>
